@@ -1,0 +1,4 @@
+[build]
+  publish = "dist/client"
+  command = "yarn build:client && yarn build:server"
+  functions = "dist/server"
