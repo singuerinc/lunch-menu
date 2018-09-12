@@ -1,11 +1,19 @@
 import axios from "axios";
 import * as React from "react";
 
+const day = (x: number) =>
+  ["monday", "tuesday", "wednesday", "thursday", "friday"][x];
+
 interface IState {
-  menu: string[]
+  week: number;
+  menu: string[];
 }
 
 class App extends React.Component<{}, IState> {
+  private state = {
+    menu: [],
+    week: 0
+  };
   constructor(props: {}) {
     super(props);
   }
@@ -13,7 +21,7 @@ class App extends React.Component<{}, IState> {
   public load() {
     axios.get(`/.netlify/functions/menu`).then(({ data }) => {
       this.setState({
-        menu: data
+        ...data
       });
     });
   }
@@ -23,7 +31,20 @@ class App extends React.Component<{}, IState> {
   }
 
   public render() {
-      return <div>a</div>
+    return (
+      <>
+        <h1>Lunch</h1>
+        <h2>Week {this.state.week}</h2>
+        {this.state.menu.map((x: string, idx: number) => {
+          return (
+            <p key={idx}>
+              <div className="day">{day(idx)}</div>
+              {x}
+            </p>
+          );
+        })}
+      </>
+    );
   }
 }
 
