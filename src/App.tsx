@@ -1,18 +1,19 @@
 import axios from "axios";
 import * as React from "react";
+import { LoadingIcon } from "./LoadingIcon";
 
 const day = (x: number) =>
   ["monday", "tuesday", "wednesday", "thursday", "friday"][x];
 
 interface IState {
-  week: number;
+  week: number | null;
   menu: string[];
 }
 
 class App extends React.Component<{}, IState> {
-  private state = {
+  public state = {
     menu: [],
-    week: 0
+    week: null
   };
   constructor(props: {}) {
     super(props);
@@ -31,6 +32,10 @@ class App extends React.Component<{}, IState> {
   }
 
   public render() {
+    if (this.state.week === null) {
+      return <LoadingIcon />;
+    }
+
     return (
       <>
         <h1>Lunch</h1>
