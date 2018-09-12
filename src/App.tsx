@@ -38,7 +38,7 @@ class App extends React.Component<{}, IState> {
 
     return (
       <>
-        <h1>Lunch</h1>
+        <h1>Lunch kids</h1>
         <h2>Week {this.state.week}</h2>
         {this.state.menu.map((x: string, idx: number) => {
           return (
