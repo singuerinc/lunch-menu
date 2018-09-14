@@ -9,8 +9,8 @@ body {
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #111314;
-  color: #f8f9fa;
+  background-color: #f8f9fa;
+  color: #111314;
 }
 
 .loading {
@@ -42,6 +42,10 @@ p {
   font-size: 1rem;
 }
 
+.food.past {
+  text-decoration: line-through;
+}
+
 h1 {
   opacity: 0.5;
 }
@@ -51,14 +55,19 @@ h2 {
   margin: 0 0 1rem;
 }
 
+h1,
+h2 {
+  font-weight: 300;
+}
+
 p {
   font-size: 1.5rem;
 }
 
 p:not(:last-child):after {
   content: "";
-  width: 25%;
-  border-bottom: double red;
+  width: 10%;
+  border-bottom: double rgb(134, 119, 51);
   display: block;
   margin: 1rem auto;
 }
