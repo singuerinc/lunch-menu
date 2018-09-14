@@ -48,7 +48,7 @@ class App extends React.Component<{}, IState> {
   }
 
   public render() {
-    if (this.state.week === NaN) {
+    if (isNaN(this.state.week)) {
       return <LoadingIcon />;
     }
 
