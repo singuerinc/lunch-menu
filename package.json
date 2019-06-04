@@ -24,7 +24,7 @@
 		"axios": "^0.18.1",
 		"date-fns": "^1.29.0",
 		"react": "^16.5.0",
-		"react-dom": "^16.5.0",
+		"react-dom": "^16.8.6",
 		"sanitize-html": "^1.19.0",
 		"scrape-it": "^5.0.5"
 	}
